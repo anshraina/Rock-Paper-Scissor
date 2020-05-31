@@ -19,18 +19,28 @@ const game = ()=>{
         const playerHand = document.querySelector(".player-hand");
         const computerHand = document.querySelector(".computer-hand");
         const computerOption = ['rock', 'paper', 'scissor'];
-       
+        const hands = document.querySelectorAll(".hands img");
+        hands.forEach(hand=>{
+            hand.addEventListener("animationend",function(){
+                this.style.animation = "";
+            });
+        });
         options.forEach((option)=>{
             option.addEventListener("click", function(){
                 const compNumber = Math.floor(Math.random() * 3);
                 const compChoice = computerOption[compNumber];
-                console.log(compChoice);
-
-                // call compareHands
+             
+                setTimeout(() => {
+                    // call compareHands
                 compareHands(this.textContent, compChoice);
                 
                 playerHand.src = `./assets/${this.textContent}.png`;
                 computerHand.src = `./assets/${compChoice}.png`;
+                }, 2000);
+
+
+                playerHand.style.animation = "shakePlayer 2s ease";
+                computerHand.style.animation = "shakeComputer 2s ease";
             });
         });
     }
