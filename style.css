@@ -139,3 +139,27 @@ div.fadeIn{
     }
 
 }
+@media screen and (max-width:600px){
+    /* body{
+        display: none;
+    } */
+    .hands img{
+        width: 200px;
+
+    }
+    .option button{
+        width: 50px;
+    }
+
+    .winner{
+        font-size: 2rem;
+    }
+    .score h1{
+        font-size: 20px;
+    }
+    .score p{
+        font-size: 15px;
+        text-align: center;
+        padding: 10px;
+    }
+}
